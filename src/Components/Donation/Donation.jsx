@@ -32,27 +32,25 @@ const Donation = () => {
     },[jobs])
     return (
         <div>
-            <div className="card card-side bg-base-100 shadow-xl">
-                <figure><img src='{}' alt="Movie"/></figure>
-            <ul>{
+                <ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 ">{
                 appliedJobs.map(job =><li key={job.id}>
-                    <span>{job.description}{job.title}</span>
-                    <span>{job.picture}</span>
+                    <div className="hero bg-base-200 ">
+                        <div className="hero-content flex-col lg:flex-row">
+                             <img src= {job.picture} className="max-w-sm rounded-lg shadow-2xl" />
+                        <div>
+                        <button className="btn ml-5 mb-2 rounded border-transparent" style={{ backgroundColor:job.card_bg }}>
+                        <p style={{color:job.category_bg}}>{job.category}</p></button>
+
+                        <h2 className="card-title ml-5 text-sm pb-2" >{job.title}</h2>
+                        <p style={{color:job.category_bg}}>{job.price}</p>
+
+                        <button className="btn btn-primary rounded border-transparent" style={{ backgroundColor:job.card_bg }}><p style={{color:job.category_bg}}>View Details</p></button>
+                    </div>
+                </div>
+            </div>
                 </li>)
                 }</ul>
-            <div className="card-body">
-              <h2 className="card-title">New movie is released!</h2>
-              <p>Click the button to watch on Jetflix app.</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Watch</button>
-              </div>
-            </div>
-        </div>
-
-
-
-
-
+            
             <h2>hello man:{appliedJobs.length}</h2>
             
         </div>
