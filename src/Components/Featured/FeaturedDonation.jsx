@@ -16,7 +16,7 @@ const FeaturedDonation = () => {
     return (
         <div>
             <div>
-            <h2>featuredDonation :{jobs.length}</h2>
+            
             </div>
             <div className="grid grid-cols-4">
                 {
