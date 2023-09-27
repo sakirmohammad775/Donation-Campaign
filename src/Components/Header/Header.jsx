@@ -83,7 +83,7 @@ const Header = () => {
                 
 
             </div>
-            <div className="flex-none">
+            <div className="flex flex-col md:flex-row">
                 <ul className="menu menu-horizontal px-8 mx-8">
                     {links}
                 </ul>

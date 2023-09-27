@@ -10,7 +10,7 @@ const Job = ({job}) => {
         <>
         
         <Link to={`/job/${id}`}>    
-        <div className="card card-compact  bg-[${card_bg}] shadow-xl m-6" style={{ backgroundColor:job.card_bg }}>
+        <div className="card card-compact  shadow-xl m-6" style={{ backgroundColor:job.card_bg }}>
             <figure><img className="mb-3" src={picture} alt="" /></figure>
             <div className="card-actions ">
                  <button className="btn ml-5 mb-2 rounded border-transparent" style={{ backgroundColor:job.card_bg }}>
