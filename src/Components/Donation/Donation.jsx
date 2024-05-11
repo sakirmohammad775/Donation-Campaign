@@ -13,12 +13,12 @@ const Donation = () => {
 
 
     useEffect(() =>{
-        const stortedJobIds = getStoredDonation();
+        const storedJobIds = getStoredDonation();
         if(jobs.length>0){
             // const jobsApplied=jobs.filter(job =>stortedJobIds.includes(job.id))
 
             const jobsApplied =[];
-            for(const id of stortedJobIds){
+            for(const id of storedJobIds){
                 const job=jobs.find(job=> job.id ===id);
                 if(job){
                     jobsApplied.push(job)
@@ -38,20 +38,22 @@ const Donation = () => {
                         <div className="hero-content flex-col lg:flex-row">
                              <img src= {job.picture} className="max-w-sm rounded-lg shadow-2xl" />
                         <div>
-                        <button className="btn ml-5 mb-2 rounded border-transparent" style={{ backgroundColor:job.card_bg }}>
+
+                        <button className="btn rounded border-transparent" style={{ backgroundColor:job.card_bg }}>
                         <p style={{color:job.category_bg}}>{job.category}</p></button>
 
-                        <h2 className="card-title ml-5 text-sm pb-2" >{job.title}</h2>
-                        <p style={{color:job.category_bg}}>{job.price}</p>
+                        <h2 className="card-title  text-sm " >{job.title}</h2>
 
-                        <button className="btn btn-primary rounded border-transparent" style={{ backgroundColor:job.card_bg }}><p style={{color:job.category_bg}}>View Details</p></button>
+                        <p className="" style={{color:job.category_bg}}>{job.price}</p>
+
+                        <button className="btn border-transparent" style={{ backgroundColor:job.card_bg }}><p style={{color:job.category_bg}}>View Details</p></button>
                     </div>
                 </div>
             </div>
                 </li>)
                 }</ul>
             
-            <h2>hello man:{appliedJobs.length}</h2>
+            
             
         </div>
     );
